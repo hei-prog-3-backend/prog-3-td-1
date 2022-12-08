@@ -1,17 +1,18 @@
 package app.prog.controller.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Builder
 public class BookResponse {
     private Long id;
-    private String author;
+    private Long author;
     private String title;
     private boolean hasAuthor;
 }
