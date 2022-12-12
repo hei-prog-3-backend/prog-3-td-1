@@ -1,10 +1,7 @@
 package app.prog.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -14,14 +11,17 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
 public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
-    //TODO-6: join BookEntity with AuthorEntity and make the correct change so that the API does not change
-    // Must know : a book can have only one author but an author can have many books
-    private String author;
+
+    @OneToOne
+    @JoinColumn(name = "name_author")
+    private AuthorEntity author;
+
     private Integer pageNumber;
     private LocalDate releaseDate;
 
