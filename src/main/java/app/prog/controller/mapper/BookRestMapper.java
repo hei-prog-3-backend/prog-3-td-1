@@ -12,7 +12,7 @@ public class BookRestMapper {
         return BookResponse.builder()
                 .id(domain.getId())
                 .title(domain.getTitle())
-                .author(domain.getAuthor())
+                .author(domain.getAuthor().getName())
                 .hasAuthor(domain.hasAuthor())
                 .build();
     }

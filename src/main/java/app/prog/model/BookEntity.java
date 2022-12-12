@@ -19,9 +19,12 @@ public class BookEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
-    private String author;
     private Integer pageNumber;
     private LocalDate releaseDate;
+
+    @OneToOne
+    @JoinColumn(name = "author_id")
+    private  AuthorEntity author;
 
     public boolean hasAuthor() {
         return author != null;
