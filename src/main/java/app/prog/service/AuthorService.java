@@ -20,7 +20,8 @@ public class AuthorService {
     }
 
     public List<AuthorEntity> createAuthors(List<AuthorEntity> toCreate) {
-        toCreate.get(0).setId((long)authorRepository.findAll().size()+1);
+        toCreate.get(0).setId(authorRepository.findAll().size()+1);
+
         return authorRepository.saveAll(toCreate);
     }
 

@@ -22,7 +22,12 @@ public class BookEntity {
     private Integer pageNumber;
     private LocalDate releaseDate;
 
-    private String author;
+
+   @OneToOne(cascade = CascadeType.ALL)
+    private AuthorEntity author;
+
+   @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+   private CategoryEntity categoryEntity;
     public boolean hasAuthor() {
         return author != null;
     }

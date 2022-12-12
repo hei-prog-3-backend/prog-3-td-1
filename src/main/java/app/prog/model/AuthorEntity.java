@@ -1,9 +1,6 @@
 package app.prog.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,11 +18,14 @@ import java.util.List;
 @NoArgsConstructor
 public class AuthorEntity {
     @Id
-    private Long Id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int Id;
     private String Name;
     private String birthDate;
     private String particularity;
-
+    @OneToMany(mappedBy = "id")
+    private List<BookEntity> bookEntityList;
     private boolean hasParticulaty(){
         return  Name != null;
     }

@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class AuthorResponse {
-    private Long id;
+    private int id;
     private String name;
     private String particularity;
     private boolean hasParticularity;
