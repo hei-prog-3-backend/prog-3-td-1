@@ -1,9 +1,9 @@
 package app.prog.controller;
 
 import app.prog.controller.mapper.BookRestMapper;
-import app.prog.controller.response.BookResponse;
-import app.prog.controller.response.CreateBookResponse;
-import app.prog.controller.response.UpdateBookResponse;
+import app.prog.controller.response.Book.BookResponse;
+import app.prog.controller.response.Book.CreateBookResponse;
+import app.prog.controller.response.Book.UpdateBookResponse;
 import app.prog.model.BookEntity;
 import app.prog.service.BookService;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package app.prog.controller.response;
+package app.prog.controller.response.Book;
 
 import app.prog.model.AuthorEntity;
 import lombok.AllArgsConstructor;

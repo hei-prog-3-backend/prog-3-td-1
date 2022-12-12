@@ -22,10 +22,7 @@ public class BookEntity {
     private Integer pageNumber;
     private LocalDate releaseDate;
 
-    @OneToOne
-    @JoinColumn(name = "author_id")
-    private  AuthorEntity author;
-
+    private String author;
     public boolean hasAuthor() {
         return author != null;
     }
