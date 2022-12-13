@@ -1,15 +1,17 @@
 package app.prog.controller.response;
 
-import app.prog.model.AuthorEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
+import java.time.LocalDate;
+
 @AllArgsConstructor
 @Data
 @Builder
-public class UpdateBookResponse {
+public class UpdateAuthorResponse {
     private int id;
-    private AuthorEntity author;
-    private String title;
+    private String name;
+    private LocalDate birthDate;
+    private String particularity;
 }

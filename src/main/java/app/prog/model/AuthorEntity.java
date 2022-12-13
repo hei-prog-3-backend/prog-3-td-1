@@ -9,23 +9,21 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "book")
+@Table(name = "author")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BookEntity {
+public class AuthorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String title;
-    @OneToOne
-    private AuthorEntity author;
-    private Integer pageNumber;
-    private LocalDate releaseDate;
+    private String name;
+    private LocalDate birthDate;
+    private String particularity;
 
-    public boolean hasAuthor() {
-        return author != null;
+    public boolean hasParticularity() {
+        return particularity != null;
     }
 
 }
