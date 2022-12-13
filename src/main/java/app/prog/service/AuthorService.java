@@ -18,6 +18,12 @@ public class AuthorService {
         return repository.findAll(Sort.by("birthDate").ascending());
     }
 
+    public AuthorEntity getByName(String name) {
+        Optional<AuthorEntity> optional = repository.findByName(name);
+        if(optional.isPresent()) {
+            return optional.get();
+        } else throw new RuntimeException();
+    }
     public List<AuthorEntity> createAuthors(List<AuthorEntity> toCreate) {
         return repository.saveAll(toCreate);
     }

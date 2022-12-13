@@ -1,9 +1,11 @@
 create table book
 (
     id     serial,
-    author varchar,
+    author int,
     title  varchar,
     page_number int not null default 0,
     release_date date,
-    primary key (id)
+    primary key (id),
+    FOREIGN KEY (author) REFERENCES author (id)
+
 );

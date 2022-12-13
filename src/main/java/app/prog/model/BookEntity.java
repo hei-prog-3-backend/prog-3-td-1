@@ -19,7 +19,7 @@ public class BookEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
-    @OneToOne
+    @ManyToOne
     private AuthorEntity author;
     private Integer pageNumber;
     private LocalDate releaseDate;
