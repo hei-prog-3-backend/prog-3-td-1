@@ -18,7 +18,7 @@ public class BookEntity {
     private int id;
     private String title;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "name_author")
     private AuthorEntity author;
 
