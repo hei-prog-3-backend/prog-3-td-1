@@ -18,10 +18,18 @@ public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String title;
-    private String author;
+
+    @ManyToOne
+    private AuthorEntity author;
+
     private Integer pageNumber;
+
     private LocalDate releaseDate;
+
+    @ManyToOne
+    private CategoryEntity category;
 
     public boolean hasAuthor() {
         return author != null;
