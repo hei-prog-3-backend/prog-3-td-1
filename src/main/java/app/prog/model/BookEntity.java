@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "book")
@@ -17,17 +18,16 @@ import java.time.LocalDate;
 public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String title;
     private Integer pageNumber;
     private LocalDate releaseDate;
-
-
-   @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne( cascade = CascadeType.ALL )
+    @JoinColumn( name="author")
     private AuthorEntity author;
 
-   @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-   private CategoryEntity categoryEntity;
+    @OneToMany(targetEntity = CategoryEntity.class)
+   private List<CategoryEntity> categoryEntity;
     public boolean hasAuthor() {
         return author != null;
     }

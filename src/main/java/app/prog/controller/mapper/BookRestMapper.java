@@ -6,16 +6,20 @@ import app.prog.controller.response.Book.UpdateBookResponse;
 import app.prog.model.AuthorEntity;
 import app.prog.model.BookEntity;
 
+import app.prog.model.CategoryEntity;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class BookRestMapper {
 
     public BookResponse toRest(BookEntity domain) {
+        String author = domain.getAuthor() != null ? domain.getAuthor().getName() : null;
         return BookResponse.builder()
                 .id(domain.getId())
                 .title(domain.getTitle())
-                .author(domain.getAuthor().getName())
+                .author(author)
                 .hasAuthor(domain.hasAuthor())
                 .categoryEntity(domain.getCategoryEntity())
                 .build();

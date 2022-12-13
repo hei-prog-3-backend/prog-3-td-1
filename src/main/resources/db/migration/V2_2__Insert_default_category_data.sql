@@ -1,0 +1,10 @@
+insert into category (id, name) values (1, '轩硕');
+insert into category (id, name) values (2, '思翰');
+insert into category (id, name) values (3, '韵寒');
+insert into category (id, name) values (4, '俊誉');
+insert into category (id, name) values (5, '月婵');
+insert into category (id, name) values (6, '晓晴');
+insert into category (id, name) values (7, '澄泓');
+insert into category (id, name) values (8, '冠希');
+insert into category (id, name) values (9, '彤雨');
+insert into category (id, name) values (10, '龙胜');

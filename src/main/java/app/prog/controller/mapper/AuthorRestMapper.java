@@ -11,7 +11,7 @@ public class AuthorRestMapper {
 
     public AuthorResponse toRest(AuthorEntity domain){
         return AuthorResponse.builder()
-                .id(domain.getId())
+                .id(Math.toIntExact(domain.getId()))
                 .name(domain.getName())
                 .particularity(domain.getParticularity())
                 .hasParticularity(domain.getParticularity() != null)

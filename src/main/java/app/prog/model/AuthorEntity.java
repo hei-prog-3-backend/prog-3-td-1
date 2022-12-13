@@ -20,12 +20,12 @@ public class AuthorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int Id;
+    private Integer Id;
     private String Name;
     private String birthDate;
     private String particularity;
-    @OneToMany(mappedBy = "id")
-    private List<BookEntity> bookEntityList;
+
+
     private boolean hasParticulaty(){
         return  Name != null;
     }
