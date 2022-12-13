@@ -6,24 +6,20 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.util.List;
 
 @Entity
-@Table(name = "author")
+@Table(name = "category")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthorEntity {
+public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @Column(unique=true)    
     private String name;
-    private LocalDate birthDate;
-    private String particularity;
-    public boolean hasParticularity() {
-        return particularity != null;
-    }
+
+    @ManyToMany(mappedBy = "categories")
+    private List<BookEntity> books;
 }
